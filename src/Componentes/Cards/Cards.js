@@ -11,7 +11,7 @@ function Cards (props) {
                     <p>{`Descrição: ${props.planeta.descricao}`}</p>
                     <p>{`Preço: ${props.planeta.preco}`}</p>
                     <p>{`Tempo de Viagem: ${props.planeta.tempoDeViagem}`}</p>
-                    <button>
+                    <button onClick={props.addViagem}>
                         <img src={carrinhoImagem} alt="" />
                     </button>
                 </Card>
