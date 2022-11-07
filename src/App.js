@@ -4,6 +4,7 @@ import Main from "./styled"
 import { useState } from "react"
 import todasViagens from "./objetos"
 import Cards from "./Componentes/Cards/Cards"
+import Carrinho from "./Componentes/Carrinho/Carrinho"
 
 function App(props) {
   
@@ -12,6 +13,11 @@ function App(props) {
   const [query, setQuery] = useState("")
   const [sortingParameter, setSortingParameter] = useState("title")
   const [order, setOrder] = useState("asc")
+  const [listaCarrinho, setListaCarrinho] = useState([])
+
+  const addViagem = () => {
+        setListaCarrinho(todasViagens.planeta)
+  }
 
   return (
     <div>
@@ -54,10 +60,23 @@ function App(props) {
           return (
             <Cards  
               key={planeta.id}
-              planeta={planeta}>
+              planeta={planeta}
+              addViagem={addViagem}>
             </Cards>
           )
         })}
+        <Carrinho>
+          {todasViagens.map((planeta) => {
+            return (
+              <div  
+                key={planeta.id}
+                planeta={planeta}>
+              </div>
+            )
+
+          })}
+
+        </Carrinho>
       </Main>
     </div>
   );
