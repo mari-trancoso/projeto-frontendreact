@@ -15,10 +15,13 @@ function App(props) {
   const [order, setOrder] = useState("asc")
   const [listaCarrinho, setListaCarrinho] = useState([])
 
-  const addViagem = () => {
-        setListaCarrinho(todasViagens.planeta)
-  }
+  const addViagem = (viagem) => {
+        setListaCarrinho([...listaCarrinho, viagem])
+        console.log(viagem)
+    }
 
+    
+    console.log(listaCarrinho)
   return (
     <div>
       <Header
@@ -61,21 +64,16 @@ function App(props) {
             <Cards  
               key={planeta.id}
               planeta={planeta}
-              addViagem={addViagem}>
+              addViagem={addViagem}
+              >
             </Cards>
           )
         })}
-        <Carrinho>
-          {todasViagens.map((planeta) => {
-            return (
-              <div  
-                key={planeta.id}
-                planeta={planeta}>
-              </div>
-            )
-
-          })}
-
+        <Carrinho 
+          listaCarrinho={listaCarrinho}
+          setListaCarrinho={setListaCarrinho}
+          todasViagens={todasViagens}
+        >
         </Carrinho>
       </Main>
     </div>

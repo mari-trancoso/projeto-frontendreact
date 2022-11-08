@@ -3,7 +3,7 @@ import {Card, ImagemPlanetas} from "./style";
 import carrinhoImagem from "../../imagem/imagem-carrinho.svg"
 
 function Cards (props) {
-
+    
     return  <>
                 <Card>
                     <ImagemPlanetas src={props.planeta.imagem} alt="imagem de planeta"/>
@@ -11,7 +11,7 @@ function Cards (props) {
                     <p>{`Descrição: ${props.planeta.descricao}`}</p>
                     <p>{`Preço: ${props.planeta.preco}`}</p>
                     <p>{`Tempo de Viagem: ${props.planeta.tempoDeViagem}`}</p>
-                    <button onClick={props.addViagem}>
+                    <button onClick={() =>props.addViagem(props.planeta)}>
                         <img src={carrinhoImagem} alt="" />
                     </button>
                 </Card>
