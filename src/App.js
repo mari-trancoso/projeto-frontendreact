@@ -1,6 +1,7 @@
 // import styled from "styled-components"
 import Header from "./Componentes/Header/Header"
 import Main from "./styled"
+import { CardContainer } from "./styled"
 import { useState } from "react"
 import todasViagens from "./objetos"
 import Cards from "./Componentes/Cards/Cards"
@@ -53,6 +54,7 @@ function App(props) {
       >
       </Header>
       <Main>
+        <CardContainer>
         {todasViagens
         .filter((item) => {
           return item.planeta.toLocaleUpperCase().includes(query.toLocaleUpperCase()) 
@@ -83,6 +85,8 @@ function App(props) {
             </Cards>
           )
         })}
+        </CardContainer>
+        
         <Carrinho 
           listaCarrinho={listaCarrinho}
           setListaCarrinho={setListaCarrinho}

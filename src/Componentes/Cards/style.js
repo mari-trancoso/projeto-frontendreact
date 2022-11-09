@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Card = styled.section `
-    border: 1px solid black;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -15,4 +14,14 @@ export const Card = styled.section `
 export const ImagemPlanetas = styled.img`
     width: 20vw;
     height: 22vh;
-`;
+    border-radius: 12px;
+`
+
+export const TextoCard = styled.div`
+    height: 50vh;
+`
+
+export const BotaoCarrinho = styled.span`
+    display: flex;
+    justify-content: center;
+`

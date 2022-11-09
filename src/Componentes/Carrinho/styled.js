@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CarrinhoContainer = styled.div `
-    border: 1px solid black;
+    text-align: center;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -11,4 +11,5 @@ export const CarrinhoContainer = styled.div `
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px 0px rgba(102,102,102,1);
     padding: 10px;
+    
 `
