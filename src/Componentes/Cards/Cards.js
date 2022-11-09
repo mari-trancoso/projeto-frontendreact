@@ -7,6 +7,7 @@ function Cards (props) {
     return  <>
                 <Card>
                     <ImagemPlanetas src={props.planeta.imagem} alt="imagem de planeta"/>
+                    <p>{`Id: ${props.planeta.id}`}</p>
                     <p>{`Planeta: ${props.planeta.planeta}`}</p>
                     <p>{`Descrição: ${props.planeta.descricao}`}</p>
                     <p>{`Preço: ${props.planeta.preco}`}</p>

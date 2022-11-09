@@ -1,15 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { ImagemPlanetas } from "../Cards/style";
+import { CarrinhoContainer } from "./styled";
 
 function Carrinho(props) {
-    // const [subtotal, setSubTotal] = useState()
-
     let totalPreco = 0
 
-    console.log(props)
     return (
-        <>
+        <CarrinhoContainer>
             <h1>CARRINHO</h1>
             <div>
                 <section>
@@ -19,22 +17,17 @@ function Carrinho(props) {
                     return(<>
                         <p>{planeta.planeta}</p>
                         <p>{planeta.preco}</p>
-                        {/* {setSubTotal(subtotal += planeta.preco)} */}
-                       
-                        {console.log(planeta.preco)}
+                        <button onClick={() => props.removeViagem(planeta)}>Remove</button>
                     </>)
-                    
                 })
                 }
-                {/* {totalPreco += Number(planeta.preco)} */}
-                {console.log(totalPreco)}
                 </section>
                 <p>
-                    {totalPreco}
+                    {`Preço total: ${totalPreco}`}
                 </p>
-
+                <button>Finalizar compra</button>
             </div>
-        </>
+        </CarrinhoContainer>
     )
 }
 

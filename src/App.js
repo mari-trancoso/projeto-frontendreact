@@ -19,9 +19,23 @@ function App(props) {
         setListaCarrinho([...listaCarrinho, viagem])
         console.log(viagem)
     }
+  
+  const removeViagem = (viagem) => {
+    if(window.confirm("Tem certeza que quer remover esta viagem?")){
+      const novaListaCarrinho = [...listaCarrinho]
+      console.log(novaListaCarrinho)
 
-    
-    console.log(listaCarrinho)
+      const index = novaListaCarrinho.indexOf(viagem)
+      console.log(index)
+      console.log(viagem)
+
+      if(index > -1){
+        novaListaCarrinho.splice(index, 1)
+        setListaCarrinho(novaListaCarrinho)
+      }
+    }  
+  }
+
   return (
     <div>
       <Header
@@ -73,6 +87,7 @@ function App(props) {
           listaCarrinho={listaCarrinho}
           setListaCarrinho={setListaCarrinho}
           todasViagens={todasViagens}
+          removeViagem={removeViagem}
         >
         </Carrinho>
       </Main>
