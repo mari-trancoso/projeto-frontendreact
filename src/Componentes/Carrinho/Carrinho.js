@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { ImagemPlanetas } from "../Cards/style";
-import { CarrinhoContainer } from "./styled";
+import { CarrinhoContainer, ItensCarrinho, SecaoPrecoFinal } from "./styled";
 
 function Carrinho(props) {
     let totalPreco = 0
@@ -10,22 +10,24 @@ function Carrinho(props) {
         <CarrinhoContainer>
             <h1>CARRINHO</h1>
             <div>
-                <section>
+                <ItensCarrinho>
                 {props.listaCarrinho
                 .map((planeta) => {
                     {totalPreco += Number(planeta.preco)}
-                    return(<>
-                        <p>{planeta.planeta}</p>
-                        <p>{planeta.preco}</p>
-                        <button onClick={() => props.removeViagem(planeta)}>Remove</button>
-                    </>)
+                    return(<section>
+                        <p>Planeta escolhido: {planeta.planeta}</p>
+                        <p>Valor individual: {planeta.preco}</p>
+                        <button onClick={() => props.removeViagem(planeta)}>Remover</button>
+                    </section>)
                 })
                 }
-                </section>
-                <p>
-                    {`Preço total: ${totalPreco}`}
-                </p>
-                <button>Finalizar compra</button>
+                </ItensCarrinho>
+                <SecaoPrecoFinal>
+                    <p>
+                        {`Preço total: ${totalPreco}`}
+                    </p>
+                    <button>Finalizar compra</button>
+                </SecaoPrecoFinal>
             </div>
         </CarrinhoContainer>
     )
