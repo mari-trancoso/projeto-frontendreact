@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Main = styled.section `
-    margin-top: 30px;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
+    background-color: black;
+    width: 100%;
 
 `
-
 export default Main
 
 export const CardContainer = styled.div`
@@ -16,4 +16,5 @@ export const CardContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 24px;
+    
 `

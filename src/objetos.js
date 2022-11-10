@@ -36,7 +36,7 @@ const todasViagens = [
 {
   id: Math.ceil(Math.random() * 100000),  
   planeta: "Júpiter",
-  descricao: "Ele eé o maior planeta do Sistema Solar, então você vai ter muitas opções de lazer! É o planeta ideal para vpcê que quer uma viagem mais longa!",
+  descricao: "Ele é o maior planeta do Sistema Solar, então você vai ter muitas opções de lazer! É o planeta ideal para vpcê que quer uma viagem mais longa!",
   preco: 13000,
   quantidadePessoas: 1,
   tempoDeViagem: "11 dias",

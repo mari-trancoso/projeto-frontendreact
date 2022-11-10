@@ -50,9 +50,7 @@ function App(props) {
         setSortingParameter = {setSortingParameter}
         order = {order}
         setOrder = {setOrder}
-
-      >
-      </Header>
+      />
       <Main>
         <CardContainer>
         {todasViagens
@@ -95,6 +93,7 @@ function App(props) {
         >
         </Carrinho>
       </Main>
+      
     </div>
   );
 }
