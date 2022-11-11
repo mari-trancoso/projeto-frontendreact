@@ -13,7 +13,7 @@ function Header (props){
             <Filtros>
                 <Inputs>
                     <input
-                    placeholder="busca"
+                    placeholder="Busca por planeta"
                     value={props.query}
                     onChange={(event) => props.setQuery(event.target.value)}
                     />
@@ -32,14 +32,14 @@ function Header (props){
                     />
                 </Inputs>
                 <Ordenacao>
-                    <label for="sortingParameter">Ordenar por:</label>
-                    <select
+                    <label for="sortingParameter">Ordenar preço:</label>
+                    {/* <select
                         name="sortingParameter"
                         value={props.sortingParameter}
                         onChange={(event) => {props.setSortingParameter(event.target.value)}}
                     >
                     <option value={"preco"}>Preço</option>
-                    </select>
+                    </select> */}
 
                     <select
                         value={props.order}

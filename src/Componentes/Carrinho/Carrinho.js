@@ -1,10 +1,14 @@
 import React from "react";
-import { useState } from "react";
-import { ImagemPlanetas } from "../Cards/style";
+import { formatarPreco } from "../../formatacaoPreco";
 import { CarrinhoContainer, ItensCarrinho, SecaoPrecoFinal } from "./styled";
 
 function Carrinho(props) {
     let totalPreco = 0
+
+    function avisarCompraFinalizada () {
+        alert("Parabéns! Você finalizou a sua compra!")
+        props.setListaCarrinho([])
+    }
 
     return (
         <CarrinhoContainer>
@@ -16,7 +20,7 @@ function Carrinho(props) {
                     {totalPreco += Number(planeta.preco)}
                     return(<section>
                         <p>Planeta escolhido: {planeta.planeta}</p>
-                        <p>Valor individual: {planeta.preco}</p>
+                        <p>Valor individual: {formatarPreco.format(planeta.preco)}</p>
                         <button onClick={() => props.removeViagem(planeta)}>Remover</button>
                     </section>)
                 })
@@ -24,9 +28,9 @@ function Carrinho(props) {
                 </ItensCarrinho>
                 <SecaoPrecoFinal>
                     <p>
-                        {`Preço total: ${totalPreco}`}
+                        {`Preço total: ${formatarPreco.format(totalPreco)}`}
                     </p>
-                    <button>Finalizar compra</button>
+                    <button onClick={avisarCompraFinalizada}>Finalizar compra</button>
                 </SecaoPrecoFinal>
             </div>
         </CarrinhoContainer>
