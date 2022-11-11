@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, ImagemPlanetas, BotaoCarrinho, TextoCard, PrimeiroBloco, SegundoBloco, ParagrafoValorPessoa} from "./style";
 import carrinhoImagem from "../../imagem/imagem-carrinho.svg"
+import { formatarPreco } from "../../formatacaoPreco";
 
 function Cards (props) {
     
@@ -19,7 +20,8 @@ function Cards (props) {
                 <SegundoBloco>
                     <p>{`Planeta: ${props.planeta.planeta}`}</p>
                     <p>{`Descrição: ${props.planeta.descricao}`}</p>
-                    <p>{`Preço: ${props.planeta.preco}`}</p>
+                    <p>{`Preço: ${formatarPreco.format(props.planeta.preco)}`}</p>
+                    {/* <span>{priceFormatter.format(product.price)}</span> */}
                     <ParagrafoValorPessoa>*** Valor por pessoa ***</ParagrafoValorPessoa>
                     <p>{`Tempo de Viagem: ${props.planeta.tempoDeViagem}`}</p>
                 </SegundoBloco>

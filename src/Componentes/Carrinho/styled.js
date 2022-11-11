@@ -38,6 +38,10 @@ export const ItensCarrinho = styled.section`
 
 export const SecaoPrecoFinal = styled.section`
     padding-top: 12px;
+    
+    p{
+        margin-bottom: 12px;
+    }
 
     button{
         font-size: 0.8rem;

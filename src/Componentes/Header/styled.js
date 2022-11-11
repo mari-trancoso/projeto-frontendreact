@@ -45,9 +45,14 @@ export const Inputs = styled.section`
 
 export const Ordenacao = styled.section`
     height: 5vh;
-    width: 30%;
-    padding-right: 12px;
+    width: 25%;
+    padding-right: 14px;
     color: white;
     display: flex;
     justify-content: space-between;
+
+    label{
+        font-size: 1.2rem;
+    
+    }
 `
